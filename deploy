@@ -1,0 +1,12 @@
+cd Frontend
+npm i
+npm run build
+
+cd ../Backend
+npm i
+heroku login
+git init
+heroku git:remote -a
+git add .
+git commit -am "edit"
+git push heroku master
