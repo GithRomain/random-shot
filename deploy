@@ -1,10 +1,15 @@
+heroku login
+mkdir Deploiement
 cd Frontend
 npm i
 npm run build
-
 cd ../Backend
 npm i
-heroku login
+cd ..
+cp -a Backend/ Deploiement/
+cd Deploiement
+rm DockerFile
+rm -rfv node_modules
 git init
 heroku git:remote -a
 git add .
