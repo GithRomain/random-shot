@@ -1,5 +1,5 @@
 <template>
-<p>Nique ta mère mais je t'aime</p>
+<p>HomePage</p>
 </template>
 
 <script>
