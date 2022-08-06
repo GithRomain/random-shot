@@ -62,6 +62,21 @@ export default {
   },
   methods:{
     register(){
+      const newUser = {
+        nom: this.nom,
+        prenom: this.prenom,
+        mail: this.mail,
+        password: this.password
+      }
+      http
+          .post("/user/register", newUser)
+          .then(response => {
+            this.$store.state.actualClient = response.data
+            this.$router.push('HomePage')
+          })
+          .catch(e => {
+            console.log(e)
+          })
     }
   },
 }

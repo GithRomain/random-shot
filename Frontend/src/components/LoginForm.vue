@@ -50,6 +50,27 @@ export default {
   },
   methods:{
     login() {
+      const User = {
+        mail: this.mail,
+        password: this.password
+      }
+      http
+          .post("/user/logIn", User)
+          .then(response => {
+            this.$store.state.actualClient = response.data
+            this.$router.push('HomePage')
+          })
+          .catch(e => {
+            if (e.response.status === 401){
+              alert("Wrong mail")
+            }
+            if (e.response.status === 402){
+              alert("You have no access to this app")
+            }
+            if (e.response.status === 403){
+              alert("Wrong password")
+            }
+          })
     },
   },
 }

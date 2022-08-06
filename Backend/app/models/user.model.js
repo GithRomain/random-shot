@@ -55,13 +55,7 @@ UserSchema.methods.generateAuthToken = function(){
             prenom: user.prenom,
             mail: user.mail,
             password: user.password,
-            dateDeNaissance: user.dateDeNaissance,
-            local: user.local,
-            urlImage: user.urlImage,
-            subscription: user.subscription,
-            numElecteur: user.numElecteur,
-            autorisedElections: user.autorisedElections,
-            createdElections: user.createdElections,
+            history: user.history
         }, key
     );
     return token;

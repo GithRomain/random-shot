@@ -9,6 +9,7 @@ exports.test = (req, res) => {
 
 // User Register function
 exports.register = (req, res) => {
+    console.log("hello test")
     let newUser = new User(req.body);
     User.findOne({mail: newUser.mail}, function (err, user) {
         if (user == null){
@@ -50,4 +51,32 @@ exports.logIn = (req, res) => {
         }
 
     });
+};
+
+// Add history
+exports.addHistory = (req, res) => {
+    //Find product and update it
+    User.findOneAndUpdate({ _id: req.body._id},
+        {$set : {history: req.body.history}},{new: true})
+        .then(user => {
+            if(!user) {
+                return res.status(404).send({
+                    message: "User not found with id " +
+                        req.body._id
+                });
+            }
+            res.send(user);
+        })
+        .catch(err => {
+            if(err.kind === 'ObjectId') {
+                return res.status(404).send({
+                    message: "User not found with id " +
+                        req.body._id
+                });
+            }
+            return res.status(500).send({
+                message: "Error updating user with id " +
+                    req.body._id
+            });
+        });
 }

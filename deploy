@@ -8,10 +8,9 @@ npm i
 cd ..
 cp -a Backend/ Deploiement/
 cd Deploiement
-rm DockerFile
 rm -rfv node_modules
 git init
-heroku git:remote -a random-shot
+heroku git:remote -a test-app-je-supp-apres
 git add .
 git commit -am "edit"
 git push heroku master
