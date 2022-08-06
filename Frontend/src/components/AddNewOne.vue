@@ -8,7 +8,7 @@
       <div class="formbg">
         <div class="formbg-inner padding-horizontal--48">
 
-          <span class="padding-bottom--15"><b>Create wew set</b></span>
+          <span class="padding-bottom--15"><b>Create new set</b></span>
           <form id="stripe-login" class="testwola">
             <div class="field padding-bottom--24">
               <label><b>Name of the set</b></label>
@@ -131,7 +131,7 @@ export default {
       } else {
         if (total === 0 || total === 100) {
           if (total === 0) {
-            alert("The draw will be equiprobable")
+            //alert("The draw will be equiprobable")
           }
           if (this.$store.state.indexHistory === null){
           this.$store.state.actualClient.history.push({

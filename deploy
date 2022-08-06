@@ -10,7 +10,7 @@ cp -a Backend/ Deploiement/
 cd Deploiement
 rm -rfv node_modules
 git init
-heroku git:remote -a test-app-je-supp-apres
+heroku git:remote -a app-kine-random-shot
 git add .
 git commit -am "edit"
 git push heroku master
